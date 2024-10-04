@@ -1,7 +1,7 @@
 from airflow import DAG
 import pendulum
 import datetime
-from airflow.operators.empty import BashOperator
+from airflow.operators.bash import BashOperator
 
 
 with DAG(
@@ -13,13 +13,13 @@ with DAG(
     
     t1_Orange =BashOperator(
         task_id="t1_Orange", 
-        bash_command = "opt/airflow/plugins/shell/select_fruit.sh ORANGE",
+        bash_command = "/Users/miniggon/airflow/plugins/shell/select_fruit.sh ORANGE",
 
     )
 
     t2_avocado =BashOperator(
         task_id="t2_avocado", 
-        bash_command = "opt/airflow/plugins/shell/select_fruit.sh AVOCADO",
+        bash_command = "/Users/miniggon/airflow/plugins/shell/select_fruit.sh AVOCADO",
         
     )
     
