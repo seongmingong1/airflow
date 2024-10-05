@@ -1,2 +1,2 @@
-def get_sftp()
+def get_sftp() : 
     print('sftp project starts')
