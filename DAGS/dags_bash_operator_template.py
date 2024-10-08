@@ -19,10 +19,13 @@ with DAG(
 
     bash_t2 = BashOperator(
         task_id = "bash_t2",
-        env={
-            'START_DATE': '{{ data_interval_start | ds }}', #key value 설정. 딕셔너리 타입으로. 
-            'END_DATE': '{{ data_interval_end | ds }}'},
-        bash_command ='echo $START_DATE && echo $END_DATE' # && 앞에게 성공하면 뒤에 것도 실행하겠다는 뜻.
+
+        #env={
+        #    'START_DATE': '{{ data_interval_start | ds }}', 
+        #    'END_DATE': '{{ data_interval_end | ds }}'
+        #    }, 
+
+        bash_command ='echo {{ data_interval_start | ds }} && echo {{ data_interval_end | ds }}' # && 앞에게 성공하면 뒤에 것도 실행하겠다는 뜻.
                        
     )
 
