@@ -22,7 +22,7 @@ with DAG(
         env={
             'START_DATE': '{{ data_interval_start | ds }}', #key value 설정. 딕셔너리 타입으로. 
             'END_DATE': '{{ data_interval_end | ds }}'},
-        bash_command ='echo $START_DATE && $END_DATE' # && 앞에게 성공하면 뒤에 것도 실행하겠다는 뜻.
+        bash_command ='echo $START_DATE && echo $END_DATE' # && 앞에게 성공하면 뒤에 것도 실행하겠다는 뜻.
                        
     )
 
