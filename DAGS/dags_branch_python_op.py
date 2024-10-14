@@ -8,7 +8,7 @@ with DAG(
     dag_id = 'dags_branch_python_op',
     schedule= "0 0 * * *",
     start_date=pendulum.datetime(2024,3,1,tz="Asia/Seoul"),
-    chatchup= False
+    catchup=False
 ) as dag:
     
     def select_random():
